@@ -19,7 +19,7 @@ then
 	echo "path+=~/$folderName/bin" >> ~/.zshrc
 elif [$(awk -F: -v u="$USER" 'u==$1&&$0=$NF' /etc/passwd) =- "bash"]
 then
-  echo "You are using bash..."
+  echo "PATH=$PATH:$folderName/bin" >> ~/.bashrc
 else
   echo "You are using an unsupported shell..."
 fi
